@@ -1,0 +1,105 @@
+# depslib dependency file v1.0
+1524439500 source:c:\users\lusine\desktop\aua\c ++\capstone\main.cpp
+	<iostream>
+	<fstream>
+	<sstream>
+	<string>
+	<ctime>
+	"OrderBook.h"
+
+1524438545 c:\users\lusine\desktop\aua\c ++\capstone\include\orderbook.h
+	"Heap.h"
+	"Treap.h"
+	"RBTree.h"
+	"RBTRee.h"
+	"json/json.h"
+	<string>
+
+1524438345 c:\users\lusine\desktop\aua\c ++\capstone\include\heap.h
+	"Data.h"
+	"Utilities.h"
+	<vector>
+	<string>
+	<iostream>
+	<sstream>
+	<fstream>
+	<iomanip>
+	<stdio.h>
+	<stdlib.h>
+
+1524171102 c:\users\lusine\desktop\aua\c ++\capstone\include\data.h
+	<string>
+
+1521143342 c:\users\lusine\desktop\aua\c ++\capstone\include\utilities.h
+	<string>
+
+1524438345 c:\users\lusine\desktop\aua\c ++\capstone\include\treap.h
+	"Data.h"
+	<bits/stdc++.h>
+
+1524438610 c:\users\lusine\desktop\aua\c ++\capstone\include\rbtree.h
+	"Data.h"
+
+1520627907 c:\users\lusine\desktop\aua\c ++\capstone\include\json\json.h
+	<stddef.h>
+	<string>
+	<stdint.h>
+	<cpptl/config.h>
+	"version.h"
+	"allocator.h"
+	"config.h"
+	"forwards.h"
+	"forwards.h"
+	<string>
+	<vector>
+	<exception>
+	<map>
+	<cpptl/smallmap.h>
+	<cpptl/forwards.h>
+	"features.h"
+	"value.h"
+	<deque>
+	<iosfwd>
+	<stack>
+	<string>
+	<istream>
+	"value.h"
+	<vector>
+	<string>
+	<ostream>
+	<stdlib.h>
+	<sstream>
+	"config.h"
+
+1524171102 source:c:\users\lusine\desktop\aua\c ++\capstone\src\data.cpp
+	"Data.h"
+
+1524438345 source:c:\users\lusine\desktop\aua\c ++\capstone\src\heap.cpp
+	"Heap.h"
+
+1524438753 source:c:\users\lusine\desktop\aua\c ++\capstone\src\orderbook.cpp
+	"OrderBook.h"
+	"Utilities.h"
+	<iostream>
+	<fstream>
+	<sstream>
+	<iomanip>
+	<stdio.h>
+	<stdlib.h>
+
+1524438874 source:c:\users\lusine\desktop\aua\c ++\capstone\src\rbtree.cpp
+	<bits/stdc++.h>
+	"RBTree.h"
+
+1524438658 source:c:\users\lusine\desktop\aua\c ++\capstone\src\treap.cpp
+	"Treap.h"
+	<bits/stdc++.h>
+
+1521143003 source:c:\users\lusine\desktop\aua\c ++\capstone\src\utilities.cpp
+	"Utilities.h"
+	<iostream>
+	<sstream>
+	<iomanip>
+	<stdio.h>
+	<stdlib.h>
+
