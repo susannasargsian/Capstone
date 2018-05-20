@@ -1,0 +1,22 @@
+#GlowCode symbol file v1.3
+#Module, C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\Capstone.exe
+#ModuleTime, 05/15/2018 21:21:30 UTC
+#CommandLine, "C:\Program Files\GlowCode 10.0\gcSym.exe"  /module:"C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\Capstone.exe" /out:"Capstone.gcSym" /search:""
+NativeModuleTable.Open, C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\Capstone.exe
+#SymCallbackProc: CBA_DEFERRED_SYMBOL_LOAD_START C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\Capstone.exe
+#SymCallbackProc: CBA_DEFERRED_SYMBOL_LOAD_PARTIAL C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\Capstone.exe
+#SymCallbackProc: CBA_EVENT DBGHELP: No header for C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\Capstone.exe.  Searching for image on disk 
+#SymCallbackProc: CBA_EVENT DBGHELP: C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\Capstone.exe - OK 
+#SymCallbackProc: CBA_EVENT DBGHELP: No debug info for C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\Capstone.exe.  Searching for dbg file 
+#SymCallbackProc: CBA_EVENT DBGHELP: C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\Capstone.dbg - file not found 
+#SymCallbackProc: CBA_EVENT DBGHELP: C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\symbols\exe\Capstone.dbg - path not found 
+#SymCallbackProc: CBA_EVENT DBGHELP: C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\exe\Capstone.dbg - path not found 
+#SymCallbackProc: CBA_EVENT DBGHELP: C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\Capstone.dbg - file not found 
+#SymCallbackProc: CBA_EVENT DBGHELP: C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\Capstone.exe missing debug info.  Searching for pdb anyway 
+#SymCallbackProc: CBA_EVENT DBGHELP: C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\Capstone.pdb - file not found 
+#SymCallbackProc: CBA_EVENT DBGHELP: Capstone.pdb - file not found 
+#SymCallbackProc: CBA_DEFERRED_SYMBOL_LOAD_COMPLETE C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\Capstone.exe
+#SymCallbackProc: CBA_EVENT DBGHELP: Capstone - no symbols loaded 
+#SymGetModuleInfo64 pdb:, C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\Capstone.exe, C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\Capstone.exe, Capstone, NumSyms:0
+#SymEnumSymbols
+NativeModuleTable.Close, 0 functions

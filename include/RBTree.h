@@ -1,6 +1,7 @@
 #ifndef RED_BLACK_TREE_RBTREE_H
 #define RED_BLACK_TREE_RBTREE_H
 #include "Data.h"
+#include "Base.h"
 
 
 
@@ -15,12 +16,12 @@ struct Node
     explicit Node(Data);
 };
 
-class RBTree
+class RBTree : public Base
 {
     public:
         RBTree();
         void insert(Data);
-        void remove(Data);
+        void remove(const Data& );
         void update(Data, Data);
         Data getMax();
         Data getMin();

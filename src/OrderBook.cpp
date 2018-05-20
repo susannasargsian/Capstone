@@ -9,33 +9,73 @@
 using namespace std;
 
 
-OrderBook::OrderBook()
+OrderBook::OrderBook(int type) : ask_tree(0), bid_tree(0)
 {
+  switch (type)
+  {
+      case 1:
+        ask_tree=new MinHeap();
+        bid_tree=new MaxHeap();
+      break;
 
+      case 2:
+        ask_tree=new Treap();
+        bid_tree=new Treap();
+      break;
+
+      case 3:
+        ask_tree=new RBTree();
+        bid_tree=new RBTree();
+      break;
+
+      default:
+      cout<<"None of three types selected"<<endl;
+  }
 }
 
 OrderBook::~OrderBook()
 {
-    //dtor
+    delete ask_tree;
+    delete bid_tree;
 }
 
 
 double OrderBook:: MaxBid()
 {
-    return bid_tree.getMax().price;
+    return bid_tree->getMax().price;
 }
 
 
 double OrderBook:: MinAsk()
 {
-     return ask_tree.getMin().price;
+     return ask_tree->getMin().price;
+}
+
+void OrderBook:: ProcessAsks(std::vector <Data>& asks_storage)
+{
+    int start_s=clock();
+
+    size_t all_asks_size=asks_storage.size();
+    for( int i=0; i<all_asks_size; i++)
+    {
+        ask_tree->insert(asks_storage[i]);
+    }
+
+    int stop_s=clock();
+    cout << "Execution time of Processing Asks (Function ProcessAsks): " << (stop_s-start_s)/double(CLOCKS_PER_SEC)<< endl;
+    std::cout<<"Minimum Ask Value = "<<std::setprecision(6)<<std::fixed<<MinAsk()<<std::endl;
+
 }
 
 
-void OrderBook :: ReadAsks(const Json::Value& root)
+void OrderBook :: ReadAsks(const Json::Value& root, std::vector <Data>& asks_storage )
 {
+
+    int start_s=clock();
+
     const Json::Value all_asks = root["asks"];
     int all_asks_size = all_asks.size();
+    asks_storage.resize(all_asks_size);
     for ( int i=0; i<all_asks_size; i++ )
     {
          const Json::Value single_ask = all_asks[i];
@@ -54,22 +94,35 @@ void OrderBook :: ReadAsks(const Json::Value& root)
 
 
              Data d(price, size, o);
-             ask_tree.insert(d);
+             asks_storage[i]=d;
          }
-
     }
-
-
-    std::cout<<"Minimum Ask Value = "<<std::setprecision(6)<<std::fixed<<MinAsk()<<std::endl;
-
+    int stop_s=clock();
+    cout << "Execution time of Reading Asks (Function ReadAsks): " << (stop_s-start_s)/double(CLOCKS_PER_SEC)<< endl;
 
 }
 
-
-void OrderBook :: ReadBids(const Json::Value& root)
+void OrderBook:: ProcessBids(std::vector<Data>& bids_storage)
 {
+    int start_s=clock();
+    size_t all_bids_size = bids_storage.size();
+    for( int i=0; i<all_bids_size; i++)
+    {
+        bid_tree->insert(bids_storage[i]);
+    }
+     int stop_s=clock();
+    cout << "Execution time of Processing Bids (Function ProcessBids): " << (stop_s-start_s)/double(CLOCKS_PER_SEC)<< endl;
+    std::cout<<"Maximum Bid Value = "<<std::setprecision(6)<<std::fixed<<MaxBid()<<std::endl;
+}
+
+
+void OrderBook :: ReadBids(const Json::Value& root, std::vector<Data>& bids_storage)
+{
+    int start_s=clock();
+
     const Json::Value all_bids = root["bids"];
     int all_bids_size = all_bids.size();
+    bids_storage.resize(all_bids_size);
     for ( int i=0; i<all_bids_size; i++ )
     {
          const Json::Value single_bid = all_bids[i];
@@ -84,10 +137,11 @@ void OrderBook :: ReadBids(const Json::Value& root)
              double size = toDouble( s, 6);
 
              Data d(price, size, o);
-             bid_tree.insert(d);
+             bids_storage[i]=d;
          }
     }
-    std::cout<<"Maximum Bid Value = "<<std::setprecision(6)<<std::fixed<<MaxBid()<<std::endl;
+    int stop_s=clock();
+    cout << "Execution time of Reading Bids (Function ReadBids): " << (stop_s-start_s)/double(CLOCKS_PER_SEC)<< endl;
 }
 
 
@@ -96,54 +150,27 @@ void OrderBook::ReadSequence(const Json::Value& root)
     const Json::Value all_sequences = root["sequence"];
 }
 
-
 void OrderBook::ReadProductId(const Json::Value& root)
 {
     const Json::Value productId = root["product_id"];
 }
 
-
-void OrderBook::ReadOrder(const std::string& InitData)
+void OrderBook::ReadOrder(const Json::Value& root, std::vector<Order>& orders_storage)
 {
-    Json::Value root;
-    Json::Reader Reader;
-
-    Reader.parse(InitData, root);
-
     const Json::Value type = root["type"];
     const Json::Value side = root["side"];
     double price = toDouble(root["price"].asString(),6);
     double size = toDouble(root["size"].asString(),6);
     std::string order_id = root["order_id"].asString();
+    std::string time = root["time"].asString();
+    Time tm;
+    toTime(time, tm);
     Data d(price,size,order_id);
+    Order o(type.asString(), side.asString(), d, tm);
 
-    if(type.asString()=="done")
+    if(o.type=="change")
     {
 
-        if(side.asString()=="sell")
-        {
-            ask_tree.remove(d);
-        }
-        else if(side.asString()=="buy")
-        {
-            bid_tree.remove(d);
-        }
-    }
-    else if(type.asString()=="open")
-    {
-
-        if(side.asString()=="sell")
-        {
-            ask_tree.insert(d);
-        }
-
-        else if(side.asString()=="buy")
-        {
-            bid_tree.insert(d);
-        }
-    }
-    else if(type.asString()=="change")
-    {
         double old_size =size;
         double new_size = size;
         double old_price = price;
@@ -160,66 +187,140 @@ void OrderBook::ReadOrder(const std::string& InitData)
             old_price = toDouble(root["old_price"].asString(),6);
             new_price = toDouble(root["new_price"].asString(),6);
         }
+
         Data old_d(old_price,old_size,order_id);
         Data new_d(new_price,new_size,order_id);
-        if(side.asString()=="sell")
-        {
-            ask_tree.update(old_d,new_d);
-        }
-
-        else if(side.asString()=="buy")
-        {
-            bid_tree.update(old_d,new_d);
-        }
-
+        o.data=old_d;
+        o.new_data=new_d;
 
     }
 
+    orders_storage.push_back(o);
+
 }
 
-
-void OrderBook::InitOrderBook(const std::string& InitData)
+void OrderBook:: ProcessOrders(std::vector<Order>& orders_storage)
 {
+    int start_s=clock();
+    cout<<"start_s : "<< start_s<<endl;
+    size_t orders_size = orders_storage.size();
+    cout<<orders_size<<endl;
+    Time tm = orders_storage[0].time;
+    for(int i=0; i<orders_size; i++)
+    {
+        Order& o = orders_storage[i];
+        int secs = o.time.Difference(tm);
+        if(secs>=1)
+        {
+            cout<<"Max Bid \t " << MaxBid()<<endl;
+            cout<<"Min Ask \t " <<MinAsk()<<endl;
+            tm=o.time;
+        }
+
+        if(o.type=="done")
+        {
+            if(o.side=="sell")
+            {
+                ask_tree->remove(o.data);
+            }
+
+            else if(o.side=="buy")
+            {
+                bid_tree->remove(o.data);
+            }
+        }
+        else if(o.type=="open")
+        {
+
+            if(o.side=="sell")
+            {
+                ask_tree->insert(o.data);
+            }
+
+            else if(o.side=="buy")
+            {
+                bid_tree->insert(o.data);
+            }
+        }
+        else if(o.type=="change")
+        {
+            if(o.side=="sell")
+            {
+                ask_tree->update(o.data, o.new_data);
+            }
+
+            else if(o.side=="buy")
+            {
+                bid_tree->update(o.data, o.new_data);
+            }
+        }
+    }
+        int stop_s=clock();
+        cout<<"stop_s : "<< stop_s<<endl;
+
+    cout << "Execution time of Processing Orders (Function ProcessOrders): " << (stop_s-start_s)/double(CLOCKS_PER_SEC)<< endl;
+}
+
+void OrderBook::Parse(std::ifstream& DataFile, std::vector<Data>& asks_storage, std::vector<Data>& bids_storage,
+                      std::vector<Order>& orders_storage )
+{
+    int start_s=clock();
     Json::Value root;
     Json::Reader Reader;
 
-    Reader.parse(InitData, root);
+    std::string CurLine;
+    while(getline(DataFile, CurLine))
+    {
+        Reader.parse(CurLine, root);
+        if(root.isMember("asks"))
+        {
+           ReadAsks(root, asks_storage);
+           ReadBids(root, bids_storage);
+           ReadSequence(root);
+           ReadProductId(root);
+        }
+        else if(root.isMember("order_id"))
+        {
+            ReadOrder(root, orders_storage);
+        }
+    }
+    int stop_s=clock();
+    cout << "Execution time of Parsing: " << (stop_s-start_s)/double(CLOCKS_PER_SEC)<< endl;
 
-    ReadAsks(root);
-    ReadBids(root);
-    ReadSequence(root);
-    ReadProductId(root);
+}
+
+void OrderBook::Process(std::vector<Data>& asks_storage, std::vector<Data>& bids_storage, std::vector<Order>& orders_storage)
+{
+    int start_s=clock();
+
+    ProcessAsks(asks_storage);
+    ProcessBids(bids_storage);
+    ProcessOrders (orders_storage);
+
+    int stop_s=clock();
+    cout << "Execution time of Processing: " << (stop_s-start_s)/double(CLOCKS_PER_SEC)<< endl;
 }
 
 
 void OrderBook::ReadFile()
 {
-    ask_tree.getTitle();
-    std::ifstream DataFile("Right_File.txt", std::ifstream::binary);
-    std::string CurLine;
-    if(getline(DataFile, CurLine))
-    {
-        int start_s=clock();
-        InitOrderBook(CurLine);
-        int stop_s=clock();
-        cout << "Execution time of initialization: " << (stop_s-start_s)/double(CLOCKS_PER_SEC)<< endl;
-    }
-
-    bool OK=false;
     int start_s=clock();
-    do {
-        OK = getline(DataFile, CurLine);
-        if(OK) {
 
-            ReadOrder(CurLine);
+    ask_tree->getTitle();
 
-        }
-    } while(OK );
-    int stop_s=clock();
-    cout << "Execution time of updating orders: " << (stop_s-start_s)/double(CLOCKS_PER_SEC)<< endl;
+    std::vector<Data> asks_storage;
+    std::vector<Data> bids_storage;
+    std::vector<Order> orders_storage;
 
+    std::ifstream DataFile("Right_File.txt", std::ifstream::in);
+    Parse(DataFile, asks_storage, bids_storage, orders_storage);
     DataFile.close();
+    Process(asks_storage, bids_storage, orders_storage);
+    std::cout<<"Minimum Ask Value = "<<std::setprecision(6)<<std::fixed<<MinAsk()<<std::endl;
+    std::cout<<"Maximum Bid Value = "<<std::setprecision(6)<<std::fixed<<MaxBid()<<std::endl;
 
+     int stop_s=clock();
+    cout << "Execution time of Reading File (Function ReadFile): " << (stop_s-start_s)/double(CLOCKS_PER_SEC)<< endl;
 }
 
 

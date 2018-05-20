@@ -34,16 +34,20 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Base.h" />
 		<Unit filename="include/Data.h" />
 		<Unit filename="include/Heap.h" />
+		<Unit filename="include/Order.h" />
 		<Unit filename="include/OrderBook.h" />
 		<Unit filename="include/RBTree.h" />
 		<Unit filename="include/Treap.h" />
 		<Unit filename="include/Utilities.h" />
 		<Unit filename="jsoncpp.cpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Base.cpp" />
 		<Unit filename="src/Data.cpp" />
 		<Unit filename="src/Heap.cpp" />
+		<Unit filename="src/Order.cpp" />
 		<Unit filename="src/OrderBook.cpp" />
 		<Unit filename="src/RBTree.cpp" />
 		<Unit filename="src/Treap.cpp" />

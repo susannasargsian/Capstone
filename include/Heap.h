@@ -1,6 +1,7 @@
 #ifndef HEAP_H
 #define HEAP_H
 
+#include "Base.h"
 #include "Data.h"
 #include "Utilities.h"
 #include <vector>
@@ -14,21 +15,24 @@
 
 
 
-class Heap
+class Heap: public Base
 {
 
 public:
     Heap(){};
     virtual ~Heap(){};
     void insert(Data);
-    void remove(const Data& d);
+    void remove(const Data&);
     void update(Data,Data);
 
+    Data getMax(){return Data();}
+    Data getMin(){return Data();}
 
     void bubbleDownFD(const Data& d, int f);
     std:: vector<Data> storage;
     int getSize();
     void getTitle();
+
 
 protected:
     Data getTop ();

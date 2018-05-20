@@ -1,0 +1,6 @@
+@Target.Project_name_like_program_name = SetString False
+@Target. = SetString -1
+@Target.Start_mode.StartMode = SetString 0
+@Target.InitDir = SetString C:\Users\Lusine\Desktop\AUA\C ++\Capstone\
+@Target.Name = SetString C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\Capstone.exe
+@Target.Args = SetString 

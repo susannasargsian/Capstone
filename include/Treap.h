@@ -1,4 +1,5 @@
 #include "Data.h"
+#include "Base.h"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -11,7 +12,7 @@ struct TreapNode
     TreapNode *right;
 };
 
- class Treap
+ class Treap : public Base
  {
     public:
         void insert(Data);

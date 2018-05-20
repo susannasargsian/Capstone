@@ -109,7 +109,9 @@ TreapNode* Treap::insertNode(TreapNode* root, const Data& key)
 
         // Fix Heap property if it is violated
         if (root->left->priority > root->priority)
+        {
             root = rightRotate(root);
+        }
     }
     else  // If key is greater
     {

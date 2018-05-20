@@ -1,0 +1,138 @@
+True, a System.Boolean
+>print 
+GlowCode 10.0.1002.0, start 5/16/2018 2:03:43 PM
+
+GlowCode 10.0.1002.0, start 5/16/2018 2:03:43 PM
+>CommandUI.LoadHistory
+>Target.UpdateMainTitle
+>RunIfExists C:\Users\Lusine\AppData\Roaming\GlowCode\myStartup.txt
+>RunIfExists initProjects.txt
+>WriteControlValues System.Windows.Forms.TabPage+TabPageControlCollection 
+>>@Open. = SetString -1
+-1, a System.String
+>>@Open.ActiveProject = SetString
+, a System.String
+>WriteControlValues System.Windows.Forms.TabPage+TabPageControlCollection 
+>>@Target.Project_name_like_program_name = SetString False
+False, a System.String
+>>@Target. = SetString -1
+-1, a System.String
+>>@Target.Start_mode.StartMode = SetString 0
+0, a System.String
+>>@Target.InitDir = SetString
+, a System.String
+>>@Target.Name = SetString
+, a System.String
+>>@Target.Args = SetString
+, a System.String
+>WriteControlValues System.Windows.Forms.TabPage+TabPageControlCollection 
+>>@Setup.Hide_after_running_resumes = SetString False
+False, a System.String
+>>@Setup.Suspend_before_running = SetString True
+True, a System.String
+>>@Native.Resource_tracking.StackWalkMode = SetString 0
+0, a System.String
+>>@Native.Resource_tracking.StackWalkDepth = SetString 8
+8, a System.String
+>>@Native.Resource_tracking.Track.Kernel32_Heap = SetString True
+True, a System.String
+>>@Native.Resource_tracking.Track.Kernel32_Handles = SetString False
+False, a System.String
+>>@Native.Resource_tracking.Track.Kernel32_VirtualAlloc = SetString False
+False, a System.String
+>>@Native.Resource_tracking.Track.GDI32_Handles = SetString False
+False, a System.String
+>>@Native.Resource_tracking.Track.User32_Device_Contexts = SetString False
+False, a System.String
+>>@Native.Resource_tracking.Track.Ole32_IMalloc = SetString False
+False, a System.String
+>>@Native.Resource_tracking.Track.OleAuto32_SysString = SetString False
+False, a System.String
+>>@Native.Resource_tracking.Track.User32_Menus = SetString False
+False, a System.String
+>>@Native.Instrument_function_calls = SetString True
+True, a System.String
+>>@Managed.Track.Function_call/returns = SetString False
+False, a System.String
+>>@Managed.Track.Object_allocations = SetString False
+False, a System.String
+>>@Managed.Target_uses_.NET_Framework = SetString False
+False, a System.String
+>>@Viewers.Create.ClrObjSnapshot = SetString True
+True, a System.String
+>>@Viewers.Create.TraceBuffer = SetString True
+True, a System.String
+>>@Viewers.Create.CallExplorer = SetString True
+True, a System.String
+>>@FastBuffer.Processor_affinity.Val = SetString 15
+15, a System.String
+>>@FastBuffer.Mode = SetString 0
+0, a System.String
+>>@FastBuffer.Size = SetString 500
+500, a System.String
+>>@Advanced.Fiber_Aware = SetString False
+False, a System.String
+>>@Advanced.ClockMode = SetString 0
+0, a System.String
+>>@Advanced.Commands = StringCollection.Create
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>WriteControlValues System.Windows.Forms.TabPage+TabPageControlCollection 
+>>@Functions.Collect_profile_data = SetString True
+True, a System.String
+>>@Functions.ThresholdTime = SetString 0
+0, a System.String
+>>@Functions.ThresholdTime.Items = StringCollection.Create
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>StringCollection.Add @Functions.ThresholdTime.Items <none>
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>StringCollection.Add @Functions.ThresholdTime.Items 0.1
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>StringCollection.Add @Functions.ThresholdTime.Items 0.5
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>StringCollection.Add @Functions.ThresholdTime.Items 1.0
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>StringCollection.Add @Functions.ThresholdTime.Items 5.0
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>StringCollection.Add @Functions.ThresholdTime.Items 10.
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>StringCollection.Add @Functions.ThresholdTime.Items 50.
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>StringCollection.Add @Functions.ThresholdTime.Items 100
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>StringCollection.Add @Functions.ThresholdTime.Items 500
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>StringCollection.Add @Functions.ThresholdTime.Items 1000
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>StringCollection.Add @Functions.ThresholdTime.Items 5000
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>@Functions.TriggerFunction = SetString 0
+0, a System.String
+>>@Functions.TriggerFunction.Items = StringCollection.Create
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>StringCollection.Add @Functions.TriggerFunction.Items <always>
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>StringCollection.Add @Functions.TriggerFunction.Items <never>
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>@Send. = SetString -1
+-1, a System.String
+>>@Ending.If_target's_File_->_Exit_is_selected.ExitOptions = SetString 0
+0, a System.String
+>WriteControlValues System.Windows.Forms.TabPage+TabPageControlCollection 
+>>@Stop.TerminateProcess = SetString True
+True, a System.String
+>>@Stop.ExitProcess = SetString False
+False, a System.String
+>>@Stop.Detach = SetString False
+False, a System.String
+>WriteControlValues System.Windows.Forms.TabPage+TabPageControlCollection 
+>RunIfExists initOpen.txt
+>>@Open.Open = SetString 0
+0, a System.String
+>>@Open.ActiveProject = SetString Capstone
+Capstone, a System.String
+>ReadControlValues System.Windows.Forms.TabPage+TabPageControlCollection
+>Target.UpdateMainTitle
+>CommandUI.LoadCommandChooser
+>CommandUI.SaveHistory
+>Main.SaveSettings
+>LogStop

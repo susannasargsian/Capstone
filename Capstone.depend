@@ -1,21 +1,23 @@
 # depslib dependency file v1.0
-1524439500 source:c:\users\lusine\desktop\aua\c ++\capstone\main.cpp
+1526843818 source:c:\users\lusine\desktop\aua\c ++\capstone\main.cpp
 	<iostream>
 	<fstream>
 	<sstream>
 	<string>
 	<ctime>
 	"OrderBook.h"
+	"Utilities.h"
 
-1524438545 c:\users\lusine\desktop\aua\c ++\capstone\include\orderbook.h
+1526843939 c:\users\lusine\desktop\aua\c ++\capstone\include\orderbook.h
 	"Heap.h"
+	"Order.h"
 	"Treap.h"
 	"RBTree.h"
-	"RBTRee.h"
 	"json/json.h"
 	<string>
 
-1524438345 c:\users\lusine\desktop\aua\c ++\capstone\include\heap.h
+1526423875 c:\users\lusine\desktop\aua\c ++\capstone\include\heap.h
+	"Base.h"
 	"Data.h"
 	"Utilities.h"
 	<vector>
@@ -27,18 +29,20 @@
 	<stdio.h>
 	<stdlib.h>
 
-1524171102 c:\users\lusine\desktop\aua\c ++\capstone\include\data.h
+1526334942 c:\users\lusine\desktop\aua\c ++\capstone\include\data.h
 	<string>
 
-1521143342 c:\users\lusine\desktop\aua\c ++\capstone\include\utilities.h
+1526506486 c:\users\lusine\desktop\aua\c ++\capstone\include\utilities.h
 	<string>
 
-1524438345 c:\users\lusine\desktop\aua\c ++\capstone\include\treap.h
+1526423275 c:\users\lusine\desktop\aua\c ++\capstone\include\treap.h
 	"Data.h"
+	"Base.h"
 	<bits/stdc++.h>
 
-1524438610 c:\users\lusine\desktop\aua\c ++\capstone\include\rbtree.h
+1526844110 c:\users\lusine\desktop\aua\c ++\capstone\include\rbtree.h
 	"Data.h"
+	"Base.h"
 
 1520627907 c:\users\lusine\desktop\aua\c ++\capstone\include\json\json.h
 	<stddef.h>
@@ -71,13 +75,13 @@
 	<sstream>
 	"config.h"
 
-1524171102 source:c:\users\lusine\desktop\aua\c ++\capstone\src\data.cpp
+1526334942 source:c:\users\lusine\desktop\aua\c ++\capstone\src\data.cpp
 	"Data.h"
 
 1524438345 source:c:\users\lusine\desktop\aua\c ++\capstone\src\heap.cpp
 	"Heap.h"
 
-1524438753 source:c:\users\lusine\desktop\aua\c ++\capstone\src\orderbook.cpp
+1526844166 source:c:\users\lusine\desktop\aua\c ++\capstone\src\orderbook.cpp
 	"OrderBook.h"
 	"Utilities.h"
 	<iostream>
@@ -87,19 +91,91 @@
 	<stdio.h>
 	<stdlib.h>
 
-1524438874 source:c:\users\lusine\desktop\aua\c ++\capstone\src\rbtree.cpp
+1526836078 source:c:\users\lusine\desktop\aua\c ++\capstone\src\rbtree.cpp
 	<bits/stdc++.h>
 	"RBTree.h"
 
-1524438658 source:c:\users\lusine\desktop\aua\c ++\capstone\src\treap.cpp
+1526585611 source:c:\users\lusine\desktop\aua\c ++\capstone\src\treap.cpp
 	"Treap.h"
 	<bits/stdc++.h>
 
-1521143003 source:c:\users\lusine\desktop\aua\c ++\capstone\src\utilities.cpp
+1526506486 source:c:\users\lusine\desktop\aua\c ++\capstone\src\utilities.cpp
 	"Utilities.h"
 	<iostream>
 	<sstream>
 	<iomanip>
 	<stdio.h>
 	<stdlib.h>
+
+1520627923 source:c:\users\lusine\desktop\aua\c ++\capstone\jsoncpp.cpp
+	"json/json.h"
+	<clocale>
+	<json/assertions.h>
+	<json/reader.h>
+	<json/value.h>
+	"json_tool.h"
+	<utility>
+	<cstdio>
+	<cassert>
+	<cstring>
+	<istream>
+	<sstream>
+	<memory>
+	<set>
+	<limits>
+	<json/assertions.h>
+	<json/value.h>
+	<json/writer.h>
+	<math.h>
+	<sstream>
+	<utility>
+	<cstring>
+	<cassert>
+	<cpptl/conststring.h>
+	<cstddef>
+	<algorithm>
+	"json_valueiterator.inl"
+	<json/writer.h>
+	"json_tool.h"
+	<iomanip>
+	<memory>
+	<sstream>
+	<utility>
+	<set>
+	<cassert>
+	<cstring>
+	<cstdio>
+	<float.h>
+	<ieeefp.h>
+	<math.h>
+	<math.h>
+	<cmath>
+	<float.h>
+
+1526330362 source:c:\users\lusine\desktop\aua\c ++\capstone\src\order.cpp
+	"Order.h"
+
+1526506600 c:\users\lusine\desktop\aua\c ++\capstone\include\order.h
+	"Data.h"
+	"Utilities.h"
+	<string>
+
+1526423979 c:\users\lusine\desktop\aua\c ++\capstone\include\base.h
+	"Data.h"
+
+1526422285 source:c:\users\lusine\desktop\aua\c ++\capstone\src\base.cpp
+	"Base.h"
+
+1526843253 c:\users\lusine\desktop\aua\c ++\capstone\include\redblacktree.h
+	<iostream>
+	<cstdio>
+	<cstring>
+	<algorithm>
+	<cmath>
+	<vector>
+	<cstdlib>
+	<cassert>
+
+1526841009 source:c:\users\lusine\desktop\aua\c ++\capstone\src\redblacktree.cpp
+	"RedBlackTree.h"
 

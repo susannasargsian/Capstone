@@ -55,5 +55,12 @@ bool Data:: operator >= (const Data& d)const
 
 }
 
+void Data:: operator = (const Data& d)
+{
+    price = d.price;
+    size = d.size;
+    order_id = d.order_id;
+}
+
 
 

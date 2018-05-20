@@ -56,6 +56,7 @@ void RBTree::insert(Data n)
 
 void RBTree::rotateLeft(Node *&ptr)
 {
+    assert(ptr != 0);
     Node *right_child = ptr->right;
     ptr->right = right_child->left;
 
@@ -77,6 +78,7 @@ void RBTree::rotateLeft(Node *&ptr)
 
 void RBTree::rotateRight(Node *&ptr)
 {
+    assert(ptr != 0);
     Node *left_child = ptr->left;
     ptr->left = left_child->right;
 
@@ -104,6 +106,7 @@ void RBTree::update(Data old_d, Data new_d)
 
 void RBTree::fixInsertRBTree(Node *&ptr)
 {
+    assert(ptr != 0);
     Node *parent = nullptr;
     Node *grandparent = nullptr;
     while (ptr != root && getColor(ptr) == RED && getColor(ptr->parent) == RED) {
@@ -267,7 +270,7 @@ Node* RBTree::deleteBST(Node *&root, Data data)
     return deleteBST(root->right, temp->data);
 }
 
-void RBTree::remove(Data data)
+void RBTree::remove(const Data& data)
 {
     Node *node = deleteBST(root, data);
     fixDeleteRBTree(node);

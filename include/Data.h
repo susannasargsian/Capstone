@@ -19,8 +19,9 @@ class Data
 
         bool operator <= (const Data& d)const;
 
-
         bool operator >= (const Data& d)const;
+
+        void operator = (const Data& d);
 
     public:
         double price;
