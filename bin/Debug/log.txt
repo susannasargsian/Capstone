@@ -1,8 +1,8 @@
 True, a System.Boolean
 >print 
-GlowCode 10.0.1002.0, start 5/16/2018 2:03:43 PM
+GlowCode 10.0.1002.0, start 5/22/2018 2:22:41 AM
 
-GlowCode 10.0.1002.0, start 5/16/2018 2:03:43 PM
+GlowCode 10.0.1002.0, start 5/22/2018 2:22:41 AM
 >CommandUI.LoadHistory
 >Target.UpdateMainTitle
 >RunIfExists C:\Users\Lusine\AppData\Roaming\GlowCode\myStartup.txt
@@ -133,6 +133,615 @@ Capstone, a System.String
 >ReadControlValues System.Windows.Forms.TabPage+TabPageControlCollection
 >Target.UpdateMainTitle
 >CommandUI.LoadCommandChooser
+>ProfilingController.NextTabPage
+>>Silent True
+>>WriteControlValues System.Windows.Forms.TabPage+TabPageControlCollection initOpen.txt
+>>>@Open.Open = SetString 0
+>>>@Open.ActiveProject = SetString Capstone
+>>Silent False
+True, a System.Boolean
+>>VarsPush
+>>RunIfExists initTarget.txt
+>>>@Target.Project_name_like_program_name = SetString False
+False, a System.String
+>>>@Target. = SetString -1
+-1, a System.String
+>>>@Target.Start_mode.StartMode = SetString 0
+0, a System.String
+>>>@Target.InitDir = SetString C:\Users\Lusine\Desktop\AUA\C ++\Capstone\
+C:\Users\Lusine\Desktop\AUA\C ++\Capstone\, a System.String
+>>>@Target.Name = SetString C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\Capstone.exe
+C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\Capstone.exe, a System.String
+>>>@Target.Args = SetString
+, a System.String
+>>ReadControlValues System.Windows.Forms.TabPage+TabPageControlCollection
+Target, a System.String
+>ProfilingController.NextTabPage
+>>Silent True
+>>WriteControlValues System.Windows.Forms.TabPage+TabPageControlCollection initTarget.txt
+>>>@Target.Project_name_like_program_name = SetString False
+>>>@Target. = SetString -1
+>>>@Target.Start_mode.StartMode = SetString 2
+>>>@Target.InitDir = SetString C:\Users\Lusine\Desktop\AUA\C ++\Capstone\
+>>>@Target.Name = SetString C:\Users\Lusine\Desktop\AUA\C ++\Capstone\bin\Debug\Capstone.exe
+>>>@Target.Args = SetString
+>>Silent False
+True, a System.Boolean
+>>RunIfExists initSetup.txt
+>>>@Setup.Hide_after_running_resumes = SetString False
+False, a System.String
+>>>@Setup.Suspend_before_running = SetString True
+True, a System.String
+>>>@Native.Resource_tracking.StackWalkMode = SetString 0
+0, a System.String
+>>>@Native.Resource_tracking.StackWalkDepth = SetString 8
+8, a System.String
+>>>@Native.Resource_tracking.Track.Kernel32_Heap = SetString True
+True, a System.String
+>>>@Native.Resource_tracking.Track.Kernel32_Handles = SetString False
+False, a System.String
+>>>@Native.Resource_tracking.Track.Kernel32_VirtualAlloc = SetString False
+False, a System.String
+>>>@Native.Resource_tracking.Track.GDI32_Handles = SetString False
+False, a System.String
+>>>@Native.Resource_tracking.Track.User32_Device_Contexts = SetString False
+False, a System.String
+>>>@Native.Resource_tracking.Track.Ole32_IMalloc = SetString False
+False, a System.String
+>>>@Native.Resource_tracking.Track.OleAuto32_SysString = SetString False
+False, a System.String
+>>>@Native.Resource_tracking.Track.User32_Menus = SetString False
+False, a System.String
+>>>@Native.Instrument_function_calls = SetString True
+True, a System.String
+>>>@Managed.Track.Function_call/returns = SetString True
+True, a System.String
+>>>@Managed.Track.Object_allocations = SetString True
+True, a System.String
+>>>@Managed.Target_uses_.NET_Framework = SetString True
+True, a System.String
+>>>@Viewers.Create.ClrObjSnapshot = SetString True
+True, a System.String
+>>>@Viewers.Create.TraceBuffer = SetString True
+True, a System.String
+>>>@Viewers.Create.CallExplorer = SetString True
+True, a System.String
+>>>@FastBuffer.Processor_affinity.Val = SetString 15
+15, a System.String
+>>>@FastBuffer.Mode = SetString 0
+0, a System.String
+>>>@FastBuffer.Size = SetString 500
+500, a System.String
+>>>@Advanced.Fiber_Aware = SetString False
+False, a System.String
+>>>@Advanced.ClockMode = SetString 0
+0, a System.String
+>>>@Advanced.Commands = StringCollection.Create
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>ReadControlValues System.Windows.Forms.TabPage+TabPageControlCollection
+Setup, a System.String
+>ProfilingController.NextTabPage
+>>Silent True
+>>WriteControlValues System.Windows.Forms.TabPage+TabPageControlCollection initSetup.txt
+>>>@Setup.Hide_after_running_resumes = SetString False
+>>>@Setup.Suspend_before_running = SetString True
+>>>@Native.Resource_tracking.StackWalkMode = SetString 0
+>>>@Native.Resource_tracking.StackWalkDepth = SetString 8
+>>>@Native.Resource_tracking.Track.Kernel32_Heap = SetString True
+>>>@Native.Resource_tracking.Track.Kernel32_Handles = SetString False
+>>>@Native.Resource_tracking.Track.Kernel32_VirtualAlloc = SetString False
+>>>@Native.Resource_tracking.Track.GDI32_Handles = SetString False
+>>>@Native.Resource_tracking.Track.User32_Device_Contexts = SetString False
+>>>@Native.Resource_tracking.Track.Ole32_IMalloc = SetString False
+>>>@Native.Resource_tracking.Track.OleAuto32_SysString = SetString False
+>>>@Native.Resource_tracking.Track.User32_Menus = SetString False
+>>>@Native.Instrument_function_calls = SetString True
+>>>@Managed.Track.Function_call/returns = SetString True
+>>>@Managed.Track.Object_allocations = SetString True
+>>>@Managed.Target_uses_.NET_Framework = SetString True
+>>>@Viewers.Create.ClrObjSnapshot = SetString True
+>>>@Viewers.Create.TraceBuffer = SetString True
+>>>@Viewers.Create.CallExplorer = SetString True
+>>>@FastBuffer.Processor_affinity.Val = SetString 15
+>>>@FastBuffer.Mode = SetString 0
+>>>@FastBuffer.Size = SetString 500
+>>>@Advanced.Fiber_Aware = SetString False
+>>>@Advanced.ClockMode = SetString 0
+>>>@Advanced.Commands = StringCollection.Create
+>>Silent False
+True, a System.Boolean
+>>RunIfExists initRunning.txt
+>>>@Functions.Collect_profile_data = SetString True
+True, a System.String
+>>>@Functions.ThresholdTime = SetString 0
+0, a System.String
+>>>@Functions.ThresholdTime.Items = StringCollection.Create
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items <none>
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 0.1
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 0.5
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 1.0
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 5.0
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 10.
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 50.
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 100
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 500
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 1000
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 5000
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>@Functions.TriggerFunction = SetString 0
+0, a System.String
+>>>@Functions.TriggerFunction.Items = StringCollection.Create
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.TriggerFunction.Items <always>
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.TriggerFunction.Items <never>
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>@Send. = SetString -1
+-1, a System.String
+>>>@Ending.If_target's_File_->_Exit_is_selected.ExitOptions = SetString 0
+0, a System.String
+>>ReadControlValues System.Windows.Forms.TabPage+TabPageControlCollection
+>>Target.UpdateMainTitle
+>>SharedBuffer.Create @FastBufferFullName @FastBuffer.Mode @FastBuffer.Size @SlowBufferFullName
+True, a System.Boolean
+>>Dialog.Processes 0 GlowCode.ProfilerWizardControl
+Dialog.Processes  0 GlowCode.ProfilerWizardControl
+InvalidArgument=Value of '0' is not valid for 'index'.
+Parameter name: index
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at GlowCode.Commander.CommandInterpreter.ExecArgs_1(String commandName, Object[] args)
+   at GlowCode.Commander.CommandInterpreter.ExecArgs(String commandName, Object[] args)
+Illegal processId
+>>Silent True
+>>WriteControlValues System.Windows.Forms.TabPage+TabPageControlCollection initRunning.txt
+>>>@Functions.Collect_profile_data = SetString True
+>>>@Functions.ThresholdTime = SetString 0
+>>>@Functions.ThresholdTime.Items = StringCollection.Create
+>>>StringCollection.Add @Functions.ThresholdTime.Items <none>
+>>>StringCollection.Add @Functions.ThresholdTime.Items 0.1
+>>>StringCollection.Add @Functions.ThresholdTime.Items 0.5
+>>>StringCollection.Add @Functions.ThresholdTime.Items 1.0
+>>>StringCollection.Add @Functions.ThresholdTime.Items 5.0
+>>>StringCollection.Add @Functions.ThresholdTime.Items 10.
+>>>StringCollection.Add @Functions.ThresholdTime.Items 50.
+>>>StringCollection.Add @Functions.ThresholdTime.Items 100
+>>>StringCollection.Add @Functions.ThresholdTime.Items 500
+>>>StringCollection.Add @Functions.ThresholdTime.Items 1000
+>>>StringCollection.Add @Functions.ThresholdTime.Items 5000
+>>>@Functions.TriggerFunction = SetString 0
+>>>@Functions.TriggerFunction.Items = StringCollection.Create
+>>>StringCollection.Add @Functions.TriggerFunction.Items <always>
+>>>StringCollection.Add @Functions.TriggerFunction.Items <never>
+>>>@Send. = SetString -1
+>>>@Ending.If_target's_File_->_Exit_is_selected.ExitOptions = SetString 0
+>>Silent False
+True, a System.Boolean
+>>Target.Close
+>>Pipe.transact TerminateProcess 0
+Object reference not set to an instance of an object.
+   at GlowCode.Profiler.PipeCommands.Send(String str)
+   at GlowCode.Profiler.PipeCommands.TransactResult(String str)
+   at GlowCode.Profiler.PipeCommands.Transact(String str)
+>>dbgSym.Uninit
+0, a System.Int32
+>>SharedBuffer.Close
+True, a System.Boolean
+>>Main.CloseViewers
+>>RunIfExists initSetup.txt
+>>>@Setup.Hide_after_running_resumes = SetString False
+False, a System.String
+>>>@Setup.Suspend_before_running = SetString True
+True, a System.String
+>>>@Native.Resource_tracking.StackWalkMode = SetString 0
+0, a System.String
+>>>@Native.Resource_tracking.StackWalkDepth = SetString 8
+8, a System.String
+>>>@Native.Resource_tracking.Track.Kernel32_Heap = SetString True
+True, a System.String
+>>>@Native.Resource_tracking.Track.Kernel32_Handles = SetString False
+False, a System.String
+>>>@Native.Resource_tracking.Track.Kernel32_VirtualAlloc = SetString False
+False, a System.String
+>>>@Native.Resource_tracking.Track.GDI32_Handles = SetString False
+False, a System.String
+>>>@Native.Resource_tracking.Track.User32_Device_Contexts = SetString False
+False, a System.String
+>>>@Native.Resource_tracking.Track.Ole32_IMalloc = SetString False
+False, a System.String
+>>>@Native.Resource_tracking.Track.OleAuto32_SysString = SetString False
+False, a System.String
+>>>@Native.Resource_tracking.Track.User32_Menus = SetString False
+False, a System.String
+>>>@Native.Instrument_function_calls = SetString True
+True, a System.String
+>>>@Managed.Track.Function_call/returns = SetString True
+True, a System.String
+>>>@Managed.Track.Object_allocations = SetString True
+True, a System.String
+>>>@Managed.Target_uses_.NET_Framework = SetString True
+True, a System.String
+>>>@Viewers.Create.ClrObjSnapshot = SetString True
+True, a System.String
+>>>@Viewers.Create.TraceBuffer = SetString True
+True, a System.String
+>>>@Viewers.Create.CallExplorer = SetString True
+True, a System.String
+>>>@FastBuffer.Processor_affinity.Val = SetString 15
+15, a System.String
+>>>@FastBuffer.Mode = SetString 0
+0, a System.String
+>>>@FastBuffer.Size = SetString 500
+500, a System.String
+>>>@Advanced.Fiber_Aware = SetString False
+False, a System.String
+>>>@Advanced.ClockMode = SetString 0
+0, a System.String
+>>>@Advanced.Commands = StringCollection.Create
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>ReadControlValues System.Windows.Forms.TabPage+TabPageControlCollection
+Setup, a System.String
+>ProfilingController.NextTabPage
+>>Silent True
+>>WriteControlValues System.Windows.Forms.TabPage+TabPageControlCollection initSetup.txt
+>>>@Setup.Hide_after_running_resumes = SetString False
+>>>@Setup.Suspend_before_running = SetString True
+>>>@Native.Resource_tracking.StackWalkMode = SetString 0
+>>>@Native.Resource_tracking.StackWalkDepth = SetString 8
+>>>@Native.Resource_tracking.Track.Kernel32_Heap = SetString True
+>>>@Native.Resource_tracking.Track.Kernel32_Handles = SetString True
+>>>@Native.Resource_tracking.Track.Kernel32_VirtualAlloc = SetString True
+>>>@Native.Resource_tracking.Track.GDI32_Handles = SetString True
+>>>@Native.Resource_tracking.Track.User32_Device_Contexts = SetString True
+>>>@Native.Resource_tracking.Track.Ole32_IMalloc = SetString True
+>>>@Native.Resource_tracking.Track.OleAuto32_SysString = SetString True
+>>>@Native.Resource_tracking.Track.User32_Menus = SetString True
+>>>@Native.Instrument_function_calls = SetString True
+>>>@Managed.Track.Function_call/returns = SetString True
+>>>@Managed.Track.Object_allocations = SetString True
+>>>@Managed.Target_uses_.NET_Framework = SetString True
+>>>@Viewers.Create.ClrObjSnapshot = SetString True
+>>>@Viewers.Create.TraceBuffer = SetString True
+>>>@Viewers.Create.CallExplorer = SetString True
+>>>@FastBuffer.Processor_affinity.Val = SetString 15
+>>>@FastBuffer.Mode = SetString 0
+>>>@FastBuffer.Size = SetString 500
+>>>@Advanced.Fiber_Aware = SetString False
+>>>@Advanced.ClockMode = SetString 0
+>>>@Advanced.Commands = StringCollection.Create
+>>Silent False
+True, a System.Boolean
+>>RunIfExists initRunning.txt
+>>>@Functions.Collect_profile_data = SetString True
+True, a System.String
+>>>@Functions.ThresholdTime = SetString 0
+0, a System.String
+>>>@Functions.ThresholdTime.Items = StringCollection.Create
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items <none>
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 0.1
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 0.5
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 1.0
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 5.0
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 10.
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 50.
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 100
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 500
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 1000
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 5000
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>@Functions.TriggerFunction = SetString 0
+0, a System.String
+>>>@Functions.TriggerFunction.Items = StringCollection.Create
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.TriggerFunction.Items <always>
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.TriggerFunction.Items <never>
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>@Send. = SetString -1
+-1, a System.String
+>>>@Ending.If_target's_File_->_Exit_is_selected.ExitOptions = SetString 0
+0, a System.String
+>>ReadControlValues System.Windows.Forms.TabPage+TabPageControlCollection
+>>Target.UpdateMainTitle
+>>SharedBuffer.Create @FastBufferFullName @FastBuffer.Mode @FastBuffer.Size @SlowBufferFullName
+True, a System.Boolean
+>>Dialog.Processes 0 GlowCode.ProfilerWizardControl
+Dialog.Processes  0 GlowCode.ProfilerWizardControl
+InvalidArgument=Value of '0' is not valid for 'index'.
+Parameter name: index
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at GlowCode.Commander.CommandInterpreter.ExecArgs_1(String commandName, Object[] args)
+   at GlowCode.Commander.CommandInterpreter.ExecArgs(String commandName, Object[] args)
+Illegal processId
+>>Silent True
+>>WriteControlValues System.Windows.Forms.TabPage+TabPageControlCollection initRunning.txt
+>>>@Functions.Collect_profile_data = SetString True
+>>>@Functions.ThresholdTime = SetString 0
+>>>@Functions.ThresholdTime.Items = StringCollection.Create
+>>>StringCollection.Add @Functions.ThresholdTime.Items <none>
+>>>StringCollection.Add @Functions.ThresholdTime.Items 0.1
+>>>StringCollection.Add @Functions.ThresholdTime.Items 0.5
+>>>StringCollection.Add @Functions.ThresholdTime.Items 1.0
+>>>StringCollection.Add @Functions.ThresholdTime.Items 5.0
+>>>StringCollection.Add @Functions.ThresholdTime.Items 10.
+>>>StringCollection.Add @Functions.ThresholdTime.Items 50.
+>>>StringCollection.Add @Functions.ThresholdTime.Items 100
+>>>StringCollection.Add @Functions.ThresholdTime.Items 500
+>>>StringCollection.Add @Functions.ThresholdTime.Items 1000
+>>>StringCollection.Add @Functions.ThresholdTime.Items 5000
+>>>@Functions.TriggerFunction = SetString 0
+>>>@Functions.TriggerFunction.Items = StringCollection.Create
+>>>StringCollection.Add @Functions.TriggerFunction.Items <always>
+>>>StringCollection.Add @Functions.TriggerFunction.Items <never>
+>>>@Send. = SetString -1
+>>>@Ending.If_target's_File_->_Exit_is_selected.ExitOptions = SetString 0
+>>Silent False
+True, a System.Boolean
+>>Target.Close
+>>Pipe.transact TerminateProcess 0
+Object reference not set to an instance of an object.
+   at GlowCode.Profiler.PipeCommands.Send(String str)
+   at GlowCode.Profiler.PipeCommands.TransactResult(String str)
+   at GlowCode.Profiler.PipeCommands.Transact(String str)
+>>dbgSym.Uninit
+0, a System.Int32
+>>SharedBuffer.Close
+True, a System.Boolean
+>>Main.CloseViewers
+>>RunIfExists initSetup.txt
+>>>@Setup.Hide_after_running_resumes = SetString False
+False, a System.String
+>>>@Setup.Suspend_before_running = SetString True
+True, a System.String
+>>>@Native.Resource_tracking.StackWalkMode = SetString 0
+0, a System.String
+>>>@Native.Resource_tracking.StackWalkDepth = SetString 8
+8, a System.String
+>>>@Native.Resource_tracking.Track.Kernel32_Heap = SetString True
+True, a System.String
+>>>@Native.Resource_tracking.Track.Kernel32_Handles = SetString True
+True, a System.String
+>>>@Native.Resource_tracking.Track.Kernel32_VirtualAlloc = SetString True
+True, a System.String
+>>>@Native.Resource_tracking.Track.GDI32_Handles = SetString True
+True, a System.String
+>>>@Native.Resource_tracking.Track.User32_Device_Contexts = SetString True
+True, a System.String
+>>>@Native.Resource_tracking.Track.Ole32_IMalloc = SetString True
+True, a System.String
+>>>@Native.Resource_tracking.Track.OleAuto32_SysString = SetString True
+True, a System.String
+>>>@Native.Resource_tracking.Track.User32_Menus = SetString True
+True, a System.String
+>>>@Native.Instrument_function_calls = SetString True
+True, a System.String
+>>>@Managed.Track.Function_call/returns = SetString True
+True, a System.String
+>>>@Managed.Track.Object_allocations = SetString True
+True, a System.String
+>>>@Managed.Target_uses_.NET_Framework = SetString True
+True, a System.String
+>>>@Viewers.Create.ClrObjSnapshot = SetString True
+True, a System.String
+>>>@Viewers.Create.TraceBuffer = SetString True
+True, a System.String
+>>>@Viewers.Create.CallExplorer = SetString True
+True, a System.String
+>>>@FastBuffer.Processor_affinity.Val = SetString 15
+15, a System.String
+>>>@FastBuffer.Mode = SetString 0
+0, a System.String
+>>>@FastBuffer.Size = SetString 500
+500, a System.String
+>>>@Advanced.Fiber_Aware = SetString False
+False, a System.String
+>>>@Advanced.ClockMode = SetString 0
+0, a System.String
+>>>@Advanced.Commands = StringCollection.Create
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>ReadControlValues System.Windows.Forms.TabPage+TabPageControlCollection
+Setup, a System.String
+>ProfilingController.NextTabPage
+>>Silent True
+>>WriteControlValues System.Windows.Forms.TabPage+TabPageControlCollection initSetup.txt
+>>>@Setup.Hide_after_running_resumes = SetString False
+>>>@Setup.Suspend_before_running = SetString True
+>>>@Native.Resource_tracking.StackWalkMode = SetString 0
+>>>@Native.Resource_tracking.StackWalkDepth = SetString 8
+>>>@Native.Resource_tracking.Track.Kernel32_Heap = SetString True
+>>>@Native.Resource_tracking.Track.Kernel32_Handles = SetString True
+>>>@Native.Resource_tracking.Track.Kernel32_VirtualAlloc = SetString True
+>>>@Native.Resource_tracking.Track.GDI32_Handles = SetString True
+>>>@Native.Resource_tracking.Track.User32_Device_Contexts = SetString True
+>>>@Native.Resource_tracking.Track.Ole32_IMalloc = SetString True
+>>>@Native.Resource_tracking.Track.OleAuto32_SysString = SetString True
+>>>@Native.Resource_tracking.Track.User32_Menus = SetString True
+>>>@Native.Instrument_function_calls = SetString True
+>>>@Managed.Track.Function_call/returns = SetString True
+>>>@Managed.Track.Object_allocations = SetString True
+>>>@Managed.Target_uses_.NET_Framework = SetString True
+>>>@Viewers.Create.ClrObjSnapshot = SetString True
+>>>@Viewers.Create.TraceBuffer = SetString True
+>>>@Viewers.Create.CallExplorer = SetString True
+>>>@FastBuffer.Processor_affinity.Val = SetString 15
+>>>@FastBuffer.Mode = SetString 0
+>>>@FastBuffer.Size = SetString 500
+>>>@Advanced.Fiber_Aware = SetString False
+>>>@Advanced.ClockMode = SetString 0
+>>>@Advanced.Commands = StringCollection.Create
+>>Silent False
+True, a System.Boolean
+>>RunIfExists initRunning.txt
+>>>@Functions.Collect_profile_data = SetString True
+True, a System.String
+>>>@Functions.ThresholdTime = SetString 0
+0, a System.String
+>>>@Functions.ThresholdTime.Items = StringCollection.Create
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items <none>
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 0.1
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 0.5
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 1.0
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 5.0
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 10.
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 50.
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 100
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 500
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 1000
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.ThresholdTime.Items 5000
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>@Functions.TriggerFunction = SetString 0
+0, a System.String
+>>>@Functions.TriggerFunction.Items = StringCollection.Create
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.TriggerFunction.Items <always>
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>StringCollection.Add @Functions.TriggerFunction.Items <never>
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>>@Send. = SetString -1
+-1, a System.String
+>>>@Ending.If_target's_File_->_Exit_is_selected.ExitOptions = SetString 0
+0, a System.String
+>>ReadControlValues System.Windows.Forms.TabPage+TabPageControlCollection
+>>Target.UpdateMainTitle
+>>SharedBuffer.Create @FastBufferFullName @FastBuffer.Mode @FastBuffer.Size @SlowBufferFullName
+True, a System.Boolean
+>>Dialog.Processes 0 GlowCode.ProfilerWizardControl
+Dialog.Processes  0 GlowCode.ProfilerWizardControl
+InvalidArgument=Value of '0' is not valid for 'index'.
+Parameter name: index
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at GlowCode.Commander.CommandInterpreter.ExecArgs_1(String commandName, Object[] args)
+   at GlowCode.Commander.CommandInterpreter.ExecArgs(String commandName, Object[] args)
+Illegal processId
+>>Silent True
+>>WriteControlValues System.Windows.Forms.TabPage+TabPageControlCollection initRunning.txt
+>>>@Functions.Collect_profile_data = SetString True
+>>>@Functions.ThresholdTime = SetString 0
+>>>@Functions.ThresholdTime.Items = StringCollection.Create
+>>>StringCollection.Add @Functions.ThresholdTime.Items <none>
+>>>StringCollection.Add @Functions.ThresholdTime.Items 0.1
+>>>StringCollection.Add @Functions.ThresholdTime.Items 0.5
+>>>StringCollection.Add @Functions.ThresholdTime.Items 1.0
+>>>StringCollection.Add @Functions.ThresholdTime.Items 5.0
+>>>StringCollection.Add @Functions.ThresholdTime.Items 10.
+>>>StringCollection.Add @Functions.ThresholdTime.Items 50.
+>>>StringCollection.Add @Functions.ThresholdTime.Items 100
+>>>StringCollection.Add @Functions.ThresholdTime.Items 500
+>>>StringCollection.Add @Functions.ThresholdTime.Items 1000
+>>>StringCollection.Add @Functions.ThresholdTime.Items 5000
+>>>@Functions.TriggerFunction = SetString 0
+>>>@Functions.TriggerFunction.Items = StringCollection.Create
+>>>StringCollection.Add @Functions.TriggerFunction.Items <always>
+>>>StringCollection.Add @Functions.TriggerFunction.Items <never>
+>>>@Send. = SetString -1
+>>>@Ending.If_target's_File_->_Exit_is_selected.ExitOptions = SetString 0
+>>Silent False
+True, a System.Boolean
+>>Target.Close
+>>Pipe.transact TerminateProcess 0
+Object reference not set to an instance of an object.
+   at GlowCode.Profiler.PipeCommands.Send(String str)
+   at GlowCode.Profiler.PipeCommands.TransactResult(String str)
+   at GlowCode.Profiler.PipeCommands.Transact(String str)
+>>dbgSym.Uninit
+0, a System.Int32
+>>SharedBuffer.Close
+True, a System.Boolean
+>>Main.CloseViewers
+>>RunIfExists initSetup.txt
+>>>@Setup.Hide_after_running_resumes = SetString False
+False, a System.String
+>>>@Setup.Suspend_before_running = SetString True
+True, a System.String
+>>>@Native.Resource_tracking.StackWalkMode = SetString 0
+0, a System.String
+>>>@Native.Resource_tracking.StackWalkDepth = SetString 8
+8, a System.String
+>>>@Native.Resource_tracking.Track.Kernel32_Heap = SetString True
+True, a System.String
+>>>@Native.Resource_tracking.Track.Kernel32_Handles = SetString True
+True, a System.String
+>>>@Native.Resource_tracking.Track.Kernel32_VirtualAlloc = SetString True
+True, a System.String
+>>>@Native.Resource_tracking.Track.GDI32_Handles = SetString True
+True, a System.String
+>>>@Native.Resource_tracking.Track.User32_Device_Contexts = SetString True
+True, a System.String
+>>>@Native.Resource_tracking.Track.Ole32_IMalloc = SetString True
+True, a System.String
+>>>@Native.Resource_tracking.Track.OleAuto32_SysString = SetString True
+True, a System.String
+>>>@Native.Resource_tracking.Track.User32_Menus = SetString True
+True, a System.String
+>>>@Native.Instrument_function_calls = SetString True
+True, a System.String
+>>>@Managed.Track.Function_call/returns = SetString True
+True, a System.String
+>>>@Managed.Track.Object_allocations = SetString True
+True, a System.String
+>>>@Managed.Target_uses_.NET_Framework = SetString True
+True, a System.String
+>>>@Viewers.Create.ClrObjSnapshot = SetString True
+True, a System.String
+>>>@Viewers.Create.TraceBuffer = SetString True
+True, a System.String
+>>>@Viewers.Create.CallExplorer = SetString True
+True, a System.String
+>>>@FastBuffer.Processor_affinity.Val = SetString 15
+15, a System.String
+>>>@FastBuffer.Mode = SetString 0
+0, a System.String
+>>>@FastBuffer.Size = SetString 500
+500, a System.String
+>>>@Advanced.Fiber_Aware = SetString False
+False, a System.String
+>>>@Advanced.ClockMode = SetString 0
+0, a System.String
+>>>@Advanced.Commands = StringCollection.Create
+System.Collections.Specialized.StringCollection, a System.Collections.Specialized.StringCollection
+>>ReadControlValues System.Windows.Forms.TabPage+TabPageControlCollection
+Setup, a System.String
 >CommandUI.SaveHistory
 >Main.SaveSettings
 >LogStop

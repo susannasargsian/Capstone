@@ -3,7 +3,7 @@
 #include "Heap.h"
 #include "Order.h"
 #include "Treap.h"
-#include "RBTree.h"
+#include "RedBlackTree.h"
 #include "json/json.h"
 #include <string>
 using namespace std;
@@ -34,8 +34,10 @@ class OrderBook
 
 
      private:
-        Base*  bid_tree;
         Base*  ask_tree;
+        Base*  bid_tree;
+        double removeTime;
+        double insertTime;
 
 };
 
