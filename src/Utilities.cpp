@@ -45,12 +45,15 @@ void toTime (const std::string& DT, Time& T)
 
 int Time::Difference (const Time& time)
 {
-  /*  int dh = hour-time.hour;
+    int dh = hour-time.hour;
     int dm = minute-time.minute;
     int ds = second-time.second;
     return 3600*dh + 60*dm + ds;
-    */
+/*
     return second - time.second;
+
+    return minute - time.minute;
+    */
 }
 
 

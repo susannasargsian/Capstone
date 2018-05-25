@@ -188,16 +188,29 @@ void OrderBook:: ProcessOrders(std::vector<Order>& orders_storage)
     size_t orders_size = orders_storage.size();
     cout<<orders_size<<endl;
     Time tm = orders_storage[0].time;
+    int j=0;
     for(size_t i=0; i<orders_size; i++)
     {
+
         Order& o = orders_storage[i];
         int secs = o.time.Difference(tm);
-        if(secs>=1)
+        if(secs>=10)
+
         {
+            j++;
+            int start_t=clock();
             MaxBid();
+            int stop_t=clock();
+            maxTime+=(stop_t-start_t)/double(CLOCKS_PER_SEC);
+
+            int start_s=clock();
             MinAsk();
+            int stop_s=clock();
+            minTime+=(stop_s-start_s)/double(CLOCKS_PER_SEC);
             tm=o.time;
         }
+
+
 
 
         if(o.type=="done")
@@ -251,7 +264,7 @@ void OrderBook:: ProcessOrders(std::vector<Order>& orders_storage)
             }
         }
     }
-
+    cout<<  "j: "<<j<<std::endl;
     cout<<  "Remove time: "<<removeTime<<std::endl;
     cout<<  "Insert time: "<<insertTime<<std::endl;
 }
@@ -314,14 +327,17 @@ void OrderBook::ReadFile()
     int start_1=clock();
     std::cout<<"Minimum Ask Value = "<<std::setprecision(6)<<std::fixed<<MinAsk()<<std::endl;
     int stop_1=clock();
+    minTime+=(stop_1-start_1)/double(CLOCKS_PER_SEC);
     std::cout<<"Min ask processing time: "<<(stop_1-start_1)/double(CLOCKS_PER_SEC)<<std::endl;
     int start_2=clock();
     std::cout<<"Maximum Bid Value = "<<std::setprecision(6)<<std::fixed<<MaxBid()<<std::endl;
     int stop_2=clock();
+    maxTime+=(stop_2-start_2)/double(CLOCKS_PER_SEC);
     std::cout<<"Max bid processing time: "<<(stop_2-start_2)/double(CLOCKS_PER_SEC)<<std::endl;
     std::cout<<  "Remove time: "<<removeTime<<std::endl;
     std::cout<<  "Insert time: "<<insertTime<<std::endl;
-
+    std::cout<<  "MaxBid time: "<<maxTime<<std::endl;
+    std::cout<<  "MinAsk time: "<<minTime<<std::endl;
     int stop_s=clock();
     cout << "Execution time: " << (stop_s-start_s)/double(CLOCKS_PER_SEC)<<std::endl;
 }

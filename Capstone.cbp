@@ -39,7 +39,6 @@
 		<Unit filename="include/Heap.h" />
 		<Unit filename="include/Order.h" />
 		<Unit filename="include/OrderBook.h" />
-		<Unit filename="include/RBTree.h" />
 		<Unit filename="include/RedBlackTree.h" />
 		<Unit filename="include/Treap.h" />
 		<Unit filename="include/Utilities.h" />
@@ -50,7 +49,6 @@
 		<Unit filename="src/Heap.cpp" />
 		<Unit filename="src/Order.cpp" />
 		<Unit filename="src/OrderBook.cpp" />
-		<Unit filename="src/RBTree.cpp" />
 		<Unit filename="src/RedBlackTree.cpp" />
 		<Unit filename="src/Treap.cpp" />
 		<Unit filename="src/Utilities.cpp" />

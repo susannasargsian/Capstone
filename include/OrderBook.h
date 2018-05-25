@@ -38,6 +38,8 @@ class OrderBook
         Base*  bid_tree;
         double removeTime;
         double insertTime;
+        double maxTime;
+        double minTime;
 
 };
 
